@@ -114,7 +114,7 @@ var ff = [];
 
 function solved(handle, contest, index) {
   //console.log(contest + index, is_solved[(contest) + (index)])
-  if (is_solved[(contest) + (index)] == 1)
+  if (is_solved[(contest)] == 1)
 	 return 1;
   else
     return 0;
@@ -135,7 +135,7 @@ function choose() {
   var r = document.getElementById('r').value
   var res = x
   for (var i = 0; i < res.length; i++) {
-    if (parseInt(res[i]["point"]) >= l && parseInt(res[i]["point"]) <= r && solved(handle,parseInt(res[i]["id"]), "") == 0) {
+    if (parseInt(res[i]["point"]) >= l && parseInt(res[i]["point"]) <= r && solved(handle,(res[i]["id"]), "") == 0) {
       //console.log(res[i]["contestId"], res[i]["index"])
       a.push(res[i]["contest_id"])
       b.push(res[i]["id"])
