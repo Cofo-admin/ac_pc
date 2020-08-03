@@ -1,0 +1,50 @@
+{
+	"update_url": "https://clients2.google.com/service/update2/crx",
+	
+	"name": "Cofo problem chooser (now for atcoder)",
+	
+	"short_name": "Cofo PC for atcoder",
+	
+	"version": "1.0.0",
+	
+	"description": "Cofo problem hider and problem chooser : randomly choose problems with rate that you say that you dont solved it yet in atcoder !!!",
+	
+	"manifest_version": 2,
+	
+	"icons":
+	{
+		"32": "icon32.png",
+		"64": "icon64.png",
+		"270": "icon270.png"
+	},
+
+	"browser_action":
+	{
+		"default_icon": 
+		{
+			"32": "icon32.png"
+		},
+
+		"default_title": "CoFo problem hider for ac",
+		"default_popup": "popup.html"
+	},
+
+	"permissions":
+	[
+		"storage",
+		"https://atcoder.jp/*",
+		"https://kenkoooo.com/*"
+	],
+
+	"content_scripts":
+	[
+		{
+			"js": ["background.js"],
+			"matches": 
+			[
+				"https://atcoder.jp/*",
+				"https://kenkoooo.com/*"
+			]
+		}
+	]	
+}
